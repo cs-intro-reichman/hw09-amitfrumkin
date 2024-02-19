@@ -53,7 +53,7 @@ public class List {
             str += current.toString() + " ";
             current = current.next;
         }
-        
+
         str = str.substring(0, str.length() - 1) + ")";
 
         return str;
@@ -89,16 +89,16 @@ public class List {
     /** GIVE If the given character exists in one of the CharData objects
      *  in this list, removes this CharData object from the list and returns
      *  true. Otherwise, returns false. */
-    /*public boolean remove(char chr) {
+    public boolean remove(char chr) {
         // Your code goes here
-    }*/
+    }
 
     /** Returns the CharData object at the specified index in this list. 
      *  If the index is negative or is greater than the size of this list, 
      *  throws an IndexOutOfBoundsException. */
-    /*public CharData get(int index) {
+    public CharData get(int index) {
         // Your code goes here
-    }*/
+    }
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
     public CharData[] toArray() {
