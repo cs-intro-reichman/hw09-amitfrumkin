@@ -46,7 +46,7 @@ public class List {
         int index = 0;
 
         while (current != null) {
-            if (current.cp.chr == chr) {
+            if (current.equals(chr)) {
                 return index;
             }
             current = current.next;
