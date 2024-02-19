@@ -5,6 +5,8 @@
  *  mention the existence of the Node objects). */
 public class List {
 
+
+
     // Points to the first node in this list
     private Node first;
 
@@ -29,12 +31,34 @@ public class List {
 
     /** GIVE Adds a CharData object with the given character to the beginning of this list. */
     public void addFirst(char chr) {
-        // Your code goes here
+
+        CharData charData = new CharData(chr);
+        Node newNode = new Node(charData, first);
+        newNode.next = first; // new node -> first node
+        first = newNode;      // first -> new node
+        size++;
     }
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // Your code goes here
+
+        if (size == 0) {
+
+             return "()";
+        }
+
+        String str = "(";
+        Node current = first;
+        while (current != null) {
+            str += current.toString() + " ";
+            current = current.next;
+        }
+        
+        str = str.substring(0, str.length() - 1) + ")";
+
+        return str;
+
+
     }
 
     /** Returns the index of the first CharData object in this list
@@ -46,7 +70,7 @@ public class List {
         int index = 0;
 
         while (current != null) {
-            if (current.equals(chr)) {
+            if (current.cp.equals(chr)) {
                 return index;
             }
             current = current.next;
@@ -65,16 +89,16 @@ public class List {
     /** GIVE If the given character exists in one of the CharData objects
      *  in this list, removes this CharData object from the list and returns
      *  true. Otherwise, returns false. */
-    public boolean remove(char chr) {
+    /*public boolean remove(char chr) {
         // Your code goes here
-    }
+    }*/
 
     /** Returns the CharData object at the specified index in this list. 
      *  If the index is negative or is greater than the size of this list, 
      *  throws an IndexOutOfBoundsException. */
-    public CharData get(int index) {
+    /*public CharData get(int index) {
         // Your code goes here
-    }
+    }*/
 
     /** Returns an array of CharData objects, containing all the CharData objects in this list. */
     public CharData[] toArray() {
@@ -102,4 +126,12 @@ public class List {
         // Returns an iterator that starts in that element
 	    return new ListIterator(current);
     }
+       /*public static void testIndexOf() {
+		System.out.println("\nTesting the indexOf method...");
+		List q = new List();
+		q.addFirst('a'); q.addFirst('b'); q.addFirst('c'); q.addFirst('d');
+		System.out.println("List: " + q);
+		System.out.println("Location of value a is: " + q.indexOf('a'));
+       }*/
+	
 }
