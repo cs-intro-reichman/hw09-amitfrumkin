@@ -150,12 +150,12 @@ public class LanguageModel {
   		int windowLength = Integer.parseInt(args[0]);
         String initialText = args[1];
         int generatedTextLength = Integer.parseInt(args[2]);
-        Boolean randomGeneration = args[3].equals("random");
+        Boolean randomGenerate = args[3].equals("random");
         String fileName = args[4];
-        
+
         // Create the LanguageModel object
         LanguageModel lm;
-        if(randomGeneration) {
+        if(randomGenerate) {
             lm = new LanguageModel(windowLength);
         } else {
             lm = new LanguageModel(windowLength, 20);
